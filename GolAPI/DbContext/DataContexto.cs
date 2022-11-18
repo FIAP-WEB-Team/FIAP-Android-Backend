@@ -30,7 +30,7 @@ namespace GolAPI.DbContext
                 PassageiroModel passageiroModel = new PassageiroModel();
                 passageiroModel.FirstName = DTOModel.FirstName;
                 passageiroModel.LastName = DTOModel.LastName;
-                passageiroModel.Nacionality = DTOModel.Nacionality;
+                passageiroModel.Nationality = DTOModel.Nationality;
                 passageiroModel.BirthDate = DTOModel.BirthDate;
                 passageiroModel.Gender = DTOModel.Gender;
                 passageiroModel.PassengerID = id;
@@ -57,17 +57,17 @@ namespace GolAPI.DbContext
 
 
 
-        public async Task<string> SetBuyTicketAsync(TicketModel TM) 
+        public async Task<TicketModel> SetBuyTicketAsync(TicketModel TM) 
         {
             try
             {
                 DocumentReference doc1 = database.Collection("GolData").Document("Data").Collection("BuyTickets").Document();
                 await doc1.SetAsync(TM);
-                return "Compra realizada com sucesso!";
+                return TM;
             }
             catch (Exception e)
             {
-                return "Não foi possível realizar a compra!" + e.ToString();
+                return TM ;
             }
         }
 

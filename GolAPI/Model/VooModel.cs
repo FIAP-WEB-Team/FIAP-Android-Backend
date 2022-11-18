@@ -12,6 +12,8 @@ namespace GolAPI.Model
         [FirestoreProperty]
         public string Arrival { get; set; } =string.Empty;
         [FirestoreProperty]
+        public double Price { get; set; }
+        [FirestoreProperty]
         public DateTime DepartureDate { get; set; } = DateTime.Now;
         [FirestoreProperty]
         public DateTime ArrivalDate { get; set; } = DateTime.Now;

@@ -12,7 +12,7 @@ namespace GolAPI.Model
         [FirestoreProperty]
         public string BirthDate { get; set; } = string.Empty;
         [FirestoreProperty]
-        public string Nacionality { get; set; } = string.Empty;
+        public string Nationality { get; set; } = string.Empty;
         [FirestoreProperty]
         public string PassengerID { get; set; } = string.Empty;
         [FirestoreProperty]
